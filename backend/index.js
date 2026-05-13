@@ -10,7 +10,7 @@ const AddressRouter = require('./Routes/addressRoutes');
 const AdminRouter = require('./Routes/adminRoutes');
 
 require('dotenv').config();
-require('./Models/db');
+const connectDB = require('./Models/db');
 
 const PORT = process.env.PORT || 8080;
 
@@ -26,6 +26,11 @@ app.use(cors({
     credentials: true
 }));
 app.use('/images', express.static('public/images'));
+
+app.use(async (req, res, next) => {
+    await connectDB();
+    next();
+});
 
 app.use('/api/products', ProductRouter);
 app.use('/api/orders', OrderRouter);

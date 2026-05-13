@@ -8,9 +8,13 @@ const AuthRouter = require('./Routes/AuthRouter');
 
 
 dotenv.config();
-connectDB();
 
 const app = express();
+
+app.use(async (req, res, next) => {
+    await connectDB();
+    next();
+});
 
 app.use(helmet());
 app.use(compression());
