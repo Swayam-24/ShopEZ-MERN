@@ -1,4 +1,6 @@
 const Product = require('../Models/Product');
+const Address = require('../Models/Address');
+const mongoose = require('mongoose');
 
 const seedProducts = async (req, res) => {
     try {
@@ -388,4 +390,35 @@ const seedProducts = async (req, res) => {
     }
 };
 
-module.exports = { seedProducts };
+const autoSeedAddress = async (req, res) => {
+    try {
+        // Find all users from the users collection
+        const users = await mongoose.connection.db.collection('users').find({}).toArray();
+        
+        let count = 0;
+        for (const user of users) {
+            // Check if user already has an address
+            const existingAddress = await Address.findOne({ userId: user._id });
+            if (!existingAddress) {
+                const newAddress = new Address({
+                    userId: user._id,
+                    name: user.name || "Swayam Satapathy",
+                    mobile: "9692058359",
+                    pincode: "751006",
+                    locality: "Laxmisagar",
+                    addressLine: "Plot No-264, Lane-C, Santoshi Vihar, Santoshi Vihar Park",
+                    city: "Bhubaneswar",
+                    state: "Odisha",
+                    addressType: "Home"
+                });
+                await newAddress.save();
+                count++;
+            }
+        }
+        res.status(200).json({ success: true, message: `Successfully seeded addresses for ${count} users!` });
+    } catch (err) {
+        res.status(500).json({ success: false, error: err.message });
+    }
+};
+
+module.exports = { seedProducts, autoSeedAddress };
