@@ -370,7 +370,38 @@ const Addresses = () => {
                 
                 {addresses.length === 0 && !showForm && (
                     <div className="empty-addresses" style={{ textAlign: 'center', padding: '40px', color: '#878787' }}>
-                        No saved addresses found. Click below to add one.
+                        <p>No saved addresses found.</p>
+                        <button 
+                            className="save-btn" 
+                            style={{ marginTop: '20px', width: 'auto', padding: '10px 20px' }}
+                            onClick={async () => {
+                                const userId = localStorage.getItem('userId');
+                                if (!userId) return alert("Please log in first!");
+                                const payload = {
+                                    userId,
+                                    name: "Swayam Satapathy",
+                                    mobile: "9692058359",
+                                    pincode: "751006",
+                                    locality: "Laxmisagar",
+                                    addressLine: "Plot No-264, Lane-C, Santoshi Vihar, Laxmisagar, Santoshi Vihar Park",
+                                    city: "Bhubaneswar",
+                                    state: "Odisha",
+                                    addressType: "Home"
+                                };
+                                try {
+                                    const res = await fetch(`${import.meta.env.VITE_API_URL_MAIN}/api/addresses`, {
+                                        method: 'POST',
+                                        headers: { 'Content-Type': 'application/json' },
+                                        body: JSON.stringify(payload)
+                                    });
+                                    if (res.ok) fetchAddresses();
+                                } catch (e) {
+                                    console.error(e);
+                                }
+                            }}
+                        >
+                            ADD SANTOSHI VIHAR ADDRESS
+                        </button>
                     </div>
                 )}
             </div>
