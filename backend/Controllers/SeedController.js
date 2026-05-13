@@ -392,8 +392,12 @@ const seedProducts = async (req, res) => {
 
 const autoSeedAddress = async (req, res) => {
     try {
+        const collections = await mongoose.connection.db.listCollections().toArray();
+        const collectionNames = collections.map(c => c.name);
+        
         // Find all users from the users collection
         const users = await mongoose.connection.db.collection('users').find({}).toArray();
+        const userCount = users.length;
         
         let count = 0;
         for (const user of users) {
@@ -415,7 +419,11 @@ const autoSeedAddress = async (req, res) => {
                 count++;
             }
         }
-        res.status(200).json({ success: true, message: `Successfully seeded addresses for ${count} users!` });
+        res.status(200).json({ 
+            success: true, 
+            message: `Processed ${userCount} users. Seeded ${count} new addresses.`,
+            debug: { collectionNames, userCount }
+        });
     } catch (err) {
         res.status(500).json({ success: false, error: err.message });
     }
