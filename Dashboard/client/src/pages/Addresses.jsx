@@ -202,13 +202,80 @@ const Addresses = () => {
         <div className="addresses-page-container">
             <h1 className="addresses-header">Manage Addresses</h1>
 
+            <div className="address-list">
+                {addresses.map((addr) => (
+                    <div key={addr._id} className="address-card">
+                        <div className="card-header">
+                            <div>
+                                <span className="type-tag">{addr.addressType}</span>
+                                <div className="card-top-info">
+                                    <span className="user-name">{addr.name}</span>
+                                    <span className="user-mobile">{addr.mobile}</span>
+                                </div>
+                                <div className="address-details">
+                                    {addr.addressLine}, {addr.locality}, {addr.city}, {addr.state} - <strong>{addr.pincode}</strong>
+                                </div>
+                            </div>
+                            <div style={{ position: 'relative' }}>
+                                <button className="more-btn" onClick={() => setActiveMenuId(activeMenuId === addr._id ? null : addr._id)}>
+                                    ⋮
+                                </button>
+                                {activeMenuId === addr._id && (
+                                    <div className="more-menu">
+                                        <div className="menu-item" onClick={() => handleEdit(addr)}>Edit</div>
+                                        <div className="menu-item" onClick={() => handleDelete(addr._id)}>Delete</div>
+                                    </div>
+                                )}
+                            </div>
+                        </div>
+                    </div>
+                ))}
+                
+                {addresses.length === 0 && !showForm && (
+                    <div className="empty-addresses" style={{ textAlign: 'center', padding: '40px', color: '#878787' }}>
+                        <p>No saved addresses found.</p>
+                        <button 
+                            className="save-btn" 
+                            style={{ marginTop: '20px', width: 'auto', padding: '10px 20px' }}
+                            onClick={async () => {
+                                const userId = localStorage.getItem('userId');
+                                if (!userId) return alert("Please log in first!");
+                                const payload = {
+                                    userId,
+                                    name: "Swayam Satapathy",
+                                    mobile: "9692058359",
+                                    pincode: "751006",
+                                    locality: "Laxmisagar",
+                                    addressLine: "Plot No-264, Lane-C, Santoshi Vihar, Laxmisagar, Santoshi Vihar Park",
+                                    city: "Bhubaneswar",
+                                    state: "Odisha",
+                                    addressType: "Home"
+                                };
+                                try {
+                                    const res = await fetch(`${import.meta.env.VITE_API_URL_MAIN}/api/addresses`, {
+                                        method: 'POST',
+                                        headers: { 'Content-Type': 'application/json' },
+                                        body: JSON.stringify(payload)
+                                    });
+                                    if (res.ok) fetchAddresses();
+                                } catch (e) {
+                                    console.error(e);
+                                }
+                            }}
+                        >
+                            ADD SANTOSHI VIHAR ADDRESS
+                        </button>
+                    </div>
+                )}
+            </div>
+
             {!showForm ? (
-                <div className="add-address-trigger" onClick={() => setShowForm(true)}>
+                <div className="add-address-trigger" onClick={() => setShowForm(true)} style={{ marginTop: '30px' }}>
                     <span className="add-icon">+</span>
                     <span>ADD A NEW ADDRESS</span>
                 </div>
             ) : (
-                <div className="address-form-container">
+                <div className="address-form-container" style={{ marginTop: '30px' }}>
                     <h2 className="form-title">{editingId ? 'EDIT ADDRESS' : 'ADD A NEW ADDRESS'}</h2>
                     <button className="location-btn" onClick={handleLocationClick}>
                         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
@@ -338,73 +405,6 @@ const Addresses = () => {
                     </form>
                 </div>
             )}
-
-            <div className="address-list">
-                {addresses.map((addr) => (
-                    <div key={addr._id} className="address-card">
-                        <div className="card-header">
-                            <div>
-                                <span className="type-tag">{addr.addressType}</span>
-                                <div className="card-top-info">
-                                    <span className="user-name">{addr.name}</span>
-                                    <span className="user-mobile">{addr.mobile}</span>
-                                </div>
-                                <div className="address-details">
-                                    {addr.addressLine}, {addr.locality}, {addr.city}, {addr.state} - <strong>{addr.pincode}</strong>
-                                </div>
-                            </div>
-                            <div style={{ position: 'relative' }}>
-                                <button className="more-btn" onClick={() => setActiveMenuId(activeMenuId === addr._id ? null : addr._id)}>
-                                    ⋮
-                                </button>
-                                {activeMenuId === addr._id && (
-                                    <div className="more-menu">
-                                        <div className="menu-item" onClick={() => handleEdit(addr)}>Edit</div>
-                                        <div className="menu-item" onClick={() => handleDelete(addr._id)}>Delete</div>
-                                    </div>
-                                )}
-                            </div>
-                        </div>
-                    </div>
-                ))}
-                
-                {addresses.length === 0 && !showForm && (
-                    <div className="empty-addresses" style={{ textAlign: 'center', padding: '40px', color: '#878787' }}>
-                        <p>No saved addresses found.</p>
-                        <button 
-                            className="save-btn" 
-                            style={{ marginTop: '20px', width: 'auto', padding: '10px 20px' }}
-                            onClick={async () => {
-                                const userId = localStorage.getItem('userId');
-                                if (!userId) return alert("Please log in first!");
-                                const payload = {
-                                    userId,
-                                    name: "Swayam Satapathy",
-                                    mobile: "9692058359",
-                                    pincode: "751006",
-                                    locality: "Laxmisagar",
-                                    addressLine: "Plot No-264, Lane-C, Santoshi Vihar, Laxmisagar, Santoshi Vihar Park",
-                                    city: "Bhubaneswar",
-                                    state: "Odisha",
-                                    addressType: "Home"
-                                };
-                                try {
-                                    const res = await fetch(`${import.meta.env.VITE_API_URL_MAIN}/api/addresses`, {
-                                        method: 'POST',
-                                        headers: { 'Content-Type': 'application/json' },
-                                        body: JSON.stringify(payload)
-                                    });
-                                    if (res.ok) fetchAddresses();
-                                } catch (e) {
-                                    console.error(e);
-                                }
-                            }}
-                        >
-                            ADD SANTOSHI VIHAR ADDRESS
-                        </button>
-                    </div>
-                )}
-            </div>
         </div>
     );
 };
