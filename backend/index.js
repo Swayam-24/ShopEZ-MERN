@@ -31,6 +31,7 @@ app.use('/api/products', ProductRouter);
 app.use('/api/orders', OrderRouter);
 app.use('/api/addresses', AddressRouter);
 app.use('/api/admin', AdminRouter);
+app.get('/api/seed', require('./Controllers/SeedController').seedProducts);
 
 if (process.env.NODE_ENV !== 'production') {
     app.listen(PORT, () => {

@@ -13,6 +13,7 @@
     "docker:prod": "docker-compose up --build"
   },
   "dependencies": {
-    "concurrently": "^8.2.2"
+    "concurrently": "^8.2.2",
+    "mongoose": "^9.6.2"
   }
 }
