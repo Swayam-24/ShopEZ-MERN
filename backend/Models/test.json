@@ -1,0 +1,39 @@
+db.users.insertOne({
+    "firstname": "Jone",
+    "lastname": "Doe",
+    "email": "joe@example.com",
+    "phones": [
+        {
+            "number": "+919877655321",
+            "type": "HOME"
+        },
+        {
+            "number": "+919877655322",
+            "type": "WORK"
+        }
+    ]
+})
+
+db.users.insertOne({
+    "firstName": "Virat",
+    "lastName": "Kohli",
+    "email": "virat@gmail.com",
+    "phones": [
+        {
+            "number": "+919877655321",
+            "type": "HOME"
+        },
+        {
+            "number": "+919877655322",
+            "type": "WORK"
+        }
+    ]
+})
+
+db.users.updateOne({_id: ObjectId("65367495a93bc806d29c20c0")},{
+| $set: {
+|     "firstName":"Virat Kumar"
+| }
+| })
+
+db.users.deleteOne({_id: ObjectId("6536798085bd37009619c1a3")})

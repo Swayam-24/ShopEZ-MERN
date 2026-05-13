@@ -1,0 +1,508 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:ital,wght@1,800&display=swap');
+
+.shopez-navbar {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background-color: #fff;
+  width: 100%;
+}
+
+/* Common Row Spacing */
+.shopez-top-row, 
+.shopez-mid-row, 
+.shopez-bottom-row {
+  display: flex;
+  align-items: center;
+  padding: 12px 32px;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+/* --- Row 1: Brand & Welcome & Location --- */
+.shopez-top-row {
+  justify-content: space-between;
+}
+
+.shopez-brand-section {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.shopez-logo {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+}
+
+.shopez-logo-text {
+  font-family: 'Outfit', sans-serif;
+  font-style: italic;
+  font-weight: 800;
+  font-size: 24px;
+  color: #1a1a1a;
+}
+
+.shopez-welcome {
+  color: #10214a;
+  font-weight: 700;
+  font-size: 16px;
+  border-left: 1.5px solid rgba(0, 0, 0, 0.1);
+  padding-left: 16px;
+  margin-left: 8px;
+}
+
+/* Right Side of Top Row */
+.shopez-address-section-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  margin-left: auto;
+}
+
+.shopez-address-section {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #333;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.shopez-supercoin {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background-color: #f0f2f5;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+/* --- Row 2: Search Bar & Actions --- */
+.shopez-mid-row {
+  gap: 48px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.shopez-search-container {
+  flex-grow: 1;
+  display: flex;
+  background-color: #f0f5ff;
+  border-radius: 8px;
+  align-items: center;
+  padding: 0 16px;
+  height: 48px;
+  border: 1px solid #2874f033;
+}
+
+.shopez-search-input {
+  border: none;
+  background: transparent;
+  width: 100%;
+  height: 100%;
+  padding: 0 8px;
+  font-size: 16px;
+  outline: none;
+}
+
+.shopez-search-clear {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 8px;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 50%;
+  transition: background-color 0.2s;
+}
+
+.shopez-search-clear:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.shopez-action-btn:hover {
+  background-color: #f1f1f144;
+}
+
+.account-btn {
+  position: relative;
+  padding: 8px 12px;
+  border-radius: 4px;
+  transition: all 0.2s;
+}
+
+.account-btn:hover {
+  background-color: #f0f5ff;
+}
+
+.cart-icon-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cart-count-badge {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background-color: #ff3f6c;
+  color: #fff;
+  font-size: 10px;
+  font-weight: 700;
+  min-width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 4px;
+  border: 2px solid #fff;
+}
+
+/* Action Buttons Group (Account, Cart) */
+.shopez-actions-group {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  margin-left: auto;
+}
+
+.shopez-action-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #333;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.down-chevron {
+  opacity: 0.6;
+  margin-left: -2px;
+  transition: transform 0.2s;
+}
+
+.down-chevron.rotate {
+  transform: rotate(180deg);
+  opacity: 1;
+  color: #2874f0;
+}
+
+/* Account Dropdown Styling */
+.shopez-account-dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  width: 240px;
+  background-color: #fff;
+  box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  margin-top: 10px;
+  z-index: 1000;
+  padding: 8px 0;
+  cursor: default;
+  animation: fadeIn 0.2s ease-out;
+}
+
+/* Triangle/Arrow for Dropdown */
+.shopez-account-dropdown::before {
+  content: '';
+  position: absolute;
+  bottom: 100%;
+  right: 40px;
+  border: 8px solid transparent;
+  border-bottom-color: #fff;
+}
+
+.dropdown-header {
+  padding: 12px 16px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #212121;
+  border-bottom: 1px solid #f0f0f0;
+  margin-bottom: 4px;
+}
+
+.dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  color: #212121;
+  font-size: 14px;
+  font-weight: 400;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.dropdown-item:hover {
+  background-color: #f5faff;
+  color: #2874f0;
+}
+
+.item-icon {
+  display: flex;
+  align-items: center;
+  color: #2874f0;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- Row 3: Categories --- */
+.shopez-bottom-row {
+  overflow-x: auto;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.shopez-category-list {
+  display: flex;
+  gap: 48px;
+}
+
+.shopez-category-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 6px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 500;
+  color: #333;
+  min-width: 80px;
+  max-width: 90px;
+  padding: 8px 0;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  border-bottom: 3px solid transparent;
+}
+
+.shopez-category-item:hover {
+  transform: translateY(-4px);
+}
+
+.shopez-category-item:hover .shopez-category-name {
+  color: #2874f0;
+}
+
+.shopez-category-item.active {
+  color: #1a1a1a;
+  border-bottom: 3px solid #1a1a1a;
+}
+
+.shopez-category-item.active .shopez-category-name {
+  font-weight: 700;
+}
+
+.shopez-category-icon {
+  width: 60px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* --- Responsiveness & Device Optimization --- */
+
+/* Laptops & Desktop (Default above) */
+
+/* Large Screens & TVs (1600px+) */
+@media (min-width: 1600px) {
+  .shopez-top-row, .shopez-mid-row, .shopez-bottom-row {
+    padding: 24px 12%; 
+  }
+  .shopez-logo-text { font-size: 32px; }
+  .shopez-search-container { height: 60px; }
+  .shopez-category-item { min-width: 120px; font-size: 16px; }
+  .shopez-welcome { font-size: 18px; padding-left: 24px; }
+  .shopez-actions-group { gap: 48px; }
+}
+
+/* Tablets & iPads (768px - 1024px) */
+@media (max-width: 1024px) {
+  .shopez-top-row, .shopez-mid-row, .shopez-bottom-row {
+    padding: 12px 24px;
+  }
+  .shopez-mid-row {
+    gap: 24px;
+  }
+  .shopez-actions-group {
+    gap: 24px;
+  }
+  .shopez-welcome {
+    font-size: 14px;
+  }
+}
+
+/* Smartphones (480px - 767px) */
+@media (max-width: 767px) {
+  .shopez-top-row {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .shopez-brand-section {
+    width: 100%;
+    justify-content: space-between;
+  }
+  .shopez-welcome {
+    display: none; 
+  }
+  .shopez-address-section-wrapper {
+    width: 100%;
+    justify-content: space-between;
+    margin-left: 0;
+  }
+  .shopez-mid-row {
+    flex-direction: column;
+    gap: 12px;
+    padding-bottom: 16px;
+  }
+  .shopez-search-container {
+    width: 100%;
+    order: 2;
+  }
+  .shopez-actions-group {
+    width: 100%;
+    justify-content: space-around;
+    margin-left: 0;
+    order: 1;
+  }
+  .shopez-category-list {
+    gap: 20px;
+  }
+  .shopez-category-item {
+    min-width: 60px;
+    font-size: 12px;
+  }
+}
+
+/* JioPhone / Small Mobile ( < 360px ) */
+@media (max-width: 360px) {
+  .shopez-top-row, .shopez-mid-row, .shopez-bottom-row {
+    padding: 8px 12px;
+  }
+  .shopez-logo-text { font-size: 20px; }
+  .shopez-logo-icon { font-size: 18px; }
+  .shopez-address-section { font-size: 11px; }
+  .shopez-supercoin { padding: 2px 6px; font-size: 12px; }
+  .shopez-action-btn span { display: none; } /* Show only icons */
+  .shopez-action-btn svg { width: 22px; height: 22px; }
+  .shopez-search-container { height: 40px; }
+  .shopez-search-input { font-size: 14px; }
+  .shopez-category-list { gap: 12px; }
+  .shopez-category-item { min-width: 50px; font-size: 10px; }
+  .shopez-category-icon svg { width: 32px; height: 32px; }
+  
+  .shopez-account-dropdown {
+    width: 200px;
+    position: fixed;
+    top: 60px;
+    right: 10px;
+  }
+}
+
+/* Navbar Logout Modal Styles */
+.navbar-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  backdrop-filter: blur(2px);
+}
+
+.navbar-modal-content {
+  background: white;
+  width: 90%;
+  max-width: 450px;
+  padding: 32px;
+  border-radius: 8px;
+  position: relative;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  text-align: center;
+  animation: modalPop 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes modalPop {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.navbar-modal-close-cross {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: #ff4d4d;
+  cursor: pointer;
+  line-height: 1;
+  padding: 4px;
+  transition: all 0.2s ease;
+}
+
+.navbar-modal-close-cross:hover, .navbar-modal-close-cross:active {
+  color: #cc0000;
+  transform: scale(1.1);
+}
+
+.navbar-modal-content h2 {
+  font-size: 20px;
+  color: #222;
+  margin-bottom: 24px;
+  margin-top: 8px;
+  font-family: inherit;
+}
+
+.navbar-modal-actions {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+
+.navbar-modal-btn {
+  padding: 10px 40px;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: inherit;
+}
+
+.navbar-modal-btn.yes {
+  background-color: #2874f0;
+  color: white;
+  border: 1px solid #2874f0;
+}
+
+.navbar-modal-btn.yes:hover, .navbar-modal-btn.yes:active {
+  background-color: #1254c4;
+  border-color: #1254c4;
+}
+
+.navbar-modal-btn.no {
+  background-color: white;
+  color: #2874f0;
+  border: 1px solid #e0e0e0;
+}
+
+.navbar-modal-btn.no:hover, .navbar-modal-btn.no:active {
+  background-color: #2874f0;
+  color: white;
+  border-color: #2874f0;
+}

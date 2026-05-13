@@ -1,0 +1,18 @@
+{
+  "name": "mern-int-proj",
+  "version": "1.0.0",
+  "description": "Root project for MERN application",
+  "scripts": {
+    "start": "npm start --prefix auth-app/backend",
+    "dev:auth": "concurrently \"npm run dev --prefix auth-app/backend\" \"npm run dev --prefix auth-app/frontend\"",
+    "dev:dashboard": "concurrently \"npm start --prefix backend\" \"npm run dev --prefix Dashboard/client\"",
+    "dev:admin": "npm run dev --prefix Admin",
+    "dev:all": "concurrently \"npm run dev --prefix auth-app/backend\" \"npm run dev --prefix auth-app/frontend\" \"npm start --prefix backend\" \"npm run dev --prefix Dashboard/client\" \"npm run dev --prefix Admin\"",
+    "build:total": "npm run build --prefix Admin && npm run build --prefix Dashboard/client && npm run build --prefix auth-app/frontend",
+    "seed:atlas": "node scripts/migrate_to_atlas.js",
+    "docker:prod": "docker-compose up --build"
+  },
+  "dependencies": {
+    "concurrently": "^8.2.2"
+  }
+}

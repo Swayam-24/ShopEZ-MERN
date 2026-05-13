@@ -1,0 +1,420 @@
+.addresses-page-container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+    font-family: Inter, Roboto, Helvetica, Arial, sans-serif;
+    color: #212121;
+}
+
+.addresses-page-container {
+    padding: 32px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Ensures perfect centering */
+    width: 100%;
+}
+
+.addresses-header {
+    max-width: 850px;
+    /* Must match form container width */
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 24px;
+    color: #212121;
+}
+
+/* Add New Address Bar */
+.add-address-trigger {
+    background: #fff;
+    border: 1px solid #f0f0f0;
+    padding: 18px 24px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #2874f0;
+    font-weight: 700;
+    font-size: 15px;
+    max-width: 850px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.add-icon {
+    font-size: 22px;
+}
+
+/* Form Container */
+.address-form-container {
+    background: #f5faff;
+    border: 1px solid #e0e0e0;
+    padding: 32px;
+    margin-bottom: 32px;
+    border-radius: 4px;
+    max-width: 850px;
+    /* Fixed width for layout consistency */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+}
+
+.form-title {
+    color: #2874f0;
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 24px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.location-btn {
+    background: #2874f0;
+    color: #fff;
+    border: none;
+    padding: 14px 28px;
+    border-radius: 2px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 700;
+    font-size: 15px;
+    margin-bottom: 32px;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.address-form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-bottom: 20px;
+}
+
+.form-group-full {
+    grid-column: span 2;
+}
+
+.form-group {
+    position: relative;
+    background: #fff;
+    border-radius: 2px;
+}
+
+.form-control {
+    width: 100%;
+    height: 50px; /* Standard height to match all fields perfectly */
+    padding: 18px 14px 4px;
+    border: 1px solid #ced4da;
+    border-radius: 2px;
+    font-size: 16px;
+    outline: none;
+    background: #fff;
+    color: #212121;
+    appearance: none;
+    transition: all 0.2s;
+}
+
+/* Select Box Specific Styling - Bold Solid Black Triangle */
+select.form-control {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23212121' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14l-4.796-5.481c-.566-.647-.106-1.659.753-1.659h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: calc(100% - 16px) center;
+    background-size: 12px;
+    cursor: pointer;
+    background-color: #fff;
+}
+
+.form-control:focus {
+    border-color: #2874f0;
+    box-shadow: none;
+}
+
+.floating-label {
+    position: absolute;
+    top: 6px;
+    left: 14px;
+    font-size: 12px;
+    color: #878787;
+    pointer-events: none;
+}
+
+.form-group textarea.form-control {
+    height: auto;
+    min-height: 120px;
+    padding: 24px 14px 10px;
+}
+
+.error-msg {
+    color: #ff3f6c;
+    font-size: 11px;
+    margin-top: 4px;
+}
+
+/* Radio Buttons */
+.address-type-section {
+    margin: 30px 0;
+}
+
+.type-label {
+    font-size: 13px;
+    color: #878787;
+    margin-bottom: 15px;
+    display: block;
+    font-weight: 500;
+}
+
+.radio-group {
+    display: flex;
+    gap: 40px;
+}
+
+.radio-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 16px;
+    cursor: pointer;
+    color: #212121;
+}
+
+.radio-item input {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    accent-color: #2874f0;
+}
+
+/* Form Actions */
+.form-actions {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    margin-top: 40px;
+}
+
+.save-btn {
+    background: #2874f0;
+    color: #fff;
+    border: none;
+    padding: 16px 90px;
+    font-weight: 700;
+    font-size: 16px;
+    border-radius: 2px;
+    cursor: pointer;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .15);
+}
+
+.cancel-btn {
+    background: none;
+    border: none;
+    color: #2874f0;
+    font-weight: 700;
+    font-size: 16px;
+    cursor: pointer;
+    padding: 4px;
+}
+
+.cancel-btn:hover {
+    text-decoration: underline;
+}
+
+.address-list {
+    max-width: 850px;
+}
+
+/* Address List Cards */
+.address-card {
+    background: #fff;
+    border: 1px solid #f0f0f0;
+    border-radius: 4px;
+    padding: 24px;
+    margin-bottom: 20px;
+    position: relative;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02), 0 1px 2px rgba(0, 0, 0, 0.04);
+}
+
+.address-card:hover {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transform: translateY(-2px);
+    border-color: #e0e0e0;
+}
+
+.type-tag {
+    background: #f7f9fa;
+    color: #878787;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 6px 12px;
+    border-radius: 4px;
+    display: inline-block;
+    margin-bottom: 16px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border: 1px solid #eee;
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.card-top-info {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 12px;
+    font-size: 15px;
+    color: #212121;
+}
+
+.user-name {
+    font-weight: 700;
+}
+
+.user-mobile {
+    font-weight: 700;
+    color: #212121;
+}
+
+.address-details {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #444;
+    max-width: 85%;
+}
+
+.address-details strong {
+    font-weight: 700;
+    color: #212121;
+}
+
+/* More Menu */
+.more-btn {
+    background: none;
+    border: none;
+    color: #878787;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 6px;
+    border-radius: 50%;
+    transition: all 0.2s;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.more-btn:hover {
+    background: #f5faff;
+    color: #2874f0;
+}
+
+.more-menu {
+    position: absolute;
+    top: 55px;
+    right: 24px;
+    background: #fff;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    border-radius: 8px;
+    z-index: 100;
+    overflow: hidden;
+    min-width: 140px;
+    border: 1px solid #f0f0f0;
+    animation: menuFadeIn 0.2s ease-out;
+}
+
+@keyframes menuFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.menu-item {
+    padding: 14px 20px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.menu-item:hover {
+    background: #f5faff;
+    color: #2874f0;
+}
+
+@media (max-width: 768px) {
+    .address-form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .form-group-full {
+        grid-column: 1;
+    }
+
+    .save-btn {
+        width: 100%;
+        padding: 16px 0;
+    }
+    
+    .form-actions {
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+    }
+}
+
+@media (min-width: 1600px) {
+    .addresses-header, .add-address-trigger, .address-form-container, .address-list {
+        max-width: 1000px;
+    }
+    .save-btn {
+        padding: 16px 120px;
+    }
+}
+
+@media (max-width: 900px) {
+    .addresses-header, .add-address-trigger, .address-form-container, .address-list {
+        max-width: 95%;
+    }
+}
+
+@media (max-width: 480px) {
+    .addresses-page-container {
+        padding: 16px 0;
+    }
+    .address-form-container {
+        padding: 20px;
+    }
+    .radio-group {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
+
+@media (max-width: 360px) {
+    .addresses-header {
+        font-size: 18px;
+        text-align: center;
+    }
+    .add-address-trigger {
+        font-size: 13px;
+        padding: 14px 16px;
+    }
+    .card-top-info {
+        flex-direction: column;
+        gap: 4px;
+    }
+    .address-card {
+        padding: 16px;
+    }
+}

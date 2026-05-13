@@ -1,0 +1,56 @@
+version: '3.8'
+
+services:
+  # Main Backend API
+  main-api:
+    build: ./backend
+    ports:
+      - "8080:8080"
+    environment:
+      - PORT=8080
+      - MONGO_URI=${MONGO_URI_MAIN}
+      - FRONTEND_URL=${FRONTEND_URL}
+    restart: always
+
+  # Auth Backend API
+  auth-api:
+    build: ./auth-app/backend
+    ports:
+      - "5000:5000"
+    environment:
+      - PORT=5000
+      - MONGO_URI=${MONGO_URI_AUTH}
+      - JWT_SECRET=${JWT_SECRET}
+      - EMAIL_USER=${EMAIL_USER}
+      - EMAIL_PASS=${EMAIL_PASS}
+      - FRONTEND_URL=${FRONTEND_URL}
+    restart: always
+
+  # Shop Front-end
+  shop-frontend:
+    build: ./Dashboard/client
+    ports:
+      - "5174:80"
+    depends_on:
+      - main-api
+      - auth-api
+    restart: always
+
+  # Admin Portal
+  admin-portal:
+    build: ./Admin
+    ports:
+      - "5175:80"
+    depends_on:
+      - main-api
+      - auth-api
+    restart: always
+
+  # Auth Gateway
+  auth-gateway:
+    build: ./auth-app/frontend
+    ports:
+      - "5173:80"
+    depends_on:
+      - auth-api
+    restart: always

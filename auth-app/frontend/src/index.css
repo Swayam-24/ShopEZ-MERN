@@ -1,0 +1,173 @@
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f7f9fc;
+  min-height: 100vh;
+}
+
+.login-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.login-box {
+  background: white;
+  padding: 35px 30px;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  box-sizing: border-box;
+}
+
+.login-box h2 {
+  text-align: center;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 2rem;
+  margin-top: 0;
+  margin-bottom: 30px;
+}
+
+.input-group {
+  margin-bottom: 18px;
+}
+
+.input-group input,
+.input-group select {
+  width: 100%;
+  padding: 10px 14px;
+  box-sizing: border-box;
+  font-size: 16px;
+  border: 1px solid #999;
+  border-radius: 4px;
+  outline: none;
+  background-color: white;
+}
+
+.password-container {
+  position: relative;
+}
+
+.password-container input {
+  padding-right: 42px;
+}
+
+.eye-icon {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: black;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+}
+
+.login-box button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  background-color: blue;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 8px;
+}
+
+.login-box button:hover {
+  background-color: darkblue;
+}
+
+.sign-up-text {
+  text-align: center;
+  margin-top: 18px;
+  margin-bottom: 0;
+  font-size: 16px;
+}
+
+.sign-up-text a {
+  margin-left: 4px;
+}
+
+.forgot-password {
+  text-align: right;
+  margin-top: 10px;
+  font-size: 14px;
+  margin-bottom: -15px;
+}
+
+.forgot-password a {
+  text-decoration: none;
+  color: #434040;
+}
+
+.forgot-password a:hover {
+  text-decoration: underline;
+}
+
+/* --- Rotating Pink Ribbon Success UI --- */
+.success-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(255, 255, 255, 0.9);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  backdrop-filter: blur(8px);
+}
+
+.ribbon-container {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pink-ribbon {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  border: 8px solid #ff3bce;
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  animation: rotate-ribbon 1.2s cubic-bezier(0.68, -0.55, 0.27, 1.55) infinite;
+}
+
+.ribbon-sparkle {
+  position: absolute;
+  font-size: 2rem;
+  animation: scale-sparkle 1s ease-in-out infinite alternate;
+}
+
+.success-text {
+  margin-top: 24px;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #ff3bce;
+  font-family: 'Outfit', sans-serif;
+  letter-spacing: -0.5px;
+}
+
+@keyframes rotate-ribbon {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes scale-sparkle {
+  from { transform: scale(0.8); opacity: 0.5; }
+  to { transform: scale(1.2); opacity: 1; }
+}

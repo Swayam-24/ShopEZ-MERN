@@ -1,0 +1,225 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 
+C:\Users\satap\OneDrive\Documents\MERNIntProj>npm -v
+11.9.0
+
+C:\Users\satap\OneDrive\Documents\MERNIntProj>node -v
+v24.14.0
+
+C:\Users\satap\OneDrive\Documents\MERNIntProj>npm create vite@latest frontend
+Need to install the following packages:
+create-vite@9.0.2
+Ok to proceed? (y) y
+
+> learning-npm@1.0.0 npx
+> create-vite frontend
+
+|
+o  Select a framework:
+|  React
+|
+o  Select a variant:
+|  JavaScript
+|
+o  Install with npm and start now?
+|  Yes
+|
+o  Scaffolding project in C:\Users\satap\OneDrive\Documents\MERNIntProj\frontend...
+|
+o  Installing dependencies with npm...
+
+added 152 packages, and audited 153 packages in 21s
+
+36 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+|
+o  Starting dev server...
+
+> frontend@0.0.0 dev
+> vite
+
+
+  VITE v8.0.0  ready in 422 ms
+
+  ➜  Local:   http://localhost:5173/
+  ➜  Network: use --host to expose
+  ➜  press h + enter to show help
+4:30:33 pm [vite] (client) page reload index.html
+4:30:39 pm [vite] (client) page reload index.html (x2)
+4:36:26 pm [vite] (client) page reload index.html (x3)
+4:36:29 pm [vite] (client) page reload index.html (x4)
+4:36:39 pm [vite] (client) page reload index.html (x5)
+4:37:55 pm [vite] (client) hmr update /src/App.jsx
+4:37:55 pm [vite] Internal server error: Transform failed with 1 error:
+
+[PARSE_ERROR] Error: Empty parenthesized expression
+    ╭─[ src/App.jsx:10:10 ]
+    │
+ 10 │ ╭─▶   return (
+    ┆ ┆
+ 12 │ ├─▶   )
+    │ │
+    │ ╰─────────
+────╯
+
+  Plugin: vite:oxc
+  File: C:/Users/satap/OneDrive/Documents/MERNIntProj/frontend/src/App.jsx
+      at transformWithOxc (file:///C:/Users/satap/OneDrive/Documents/MERNIntProj/frontend/node_modules/vite/dist/node/chunks/node.js:3719:19)
+      at TransformPluginContext.transform (file:///C:/Users/satap/OneDrive/Documents/MERNIntProj/frontend/node_modules/vite/dist/node/chunks/node.js:3795:26)
+      at EnvironmentPluginContainer.transform (file:///C:/Users/satap/OneDrive/Documents/MERNIntProj/frontend/node_modules/vite/dist/node/chunks/node.js:29998:51)
+      at async loadAndTransform (file:///C:/Users/satap/OneDrive/Documents/MERNIntProj/frontend/node_modules/vite/dist/node/chunks/node.js:24133:26)
+      at async viteTransformMiddleware (file:///C:/Users/satap/OneDrive/Documents/MERNIntProj/frontend/node_modules/vite/dist/node/chunks/node.js:24941:20)
+4:37:58 pm [vite] (client) hmr update /src/App.jsx
+4:38:00 pm [vite] (client) hmr update /src/App.jsx (x2)
+4:38:02 pm [vite] (client) hmr update /src/App.jsx (x3)
+4:38:04 pm [vite] (client) hmr update /src/App.jsx (x4)
+4:38:04 pm [vite] Internal server error: Transform failed with 1 error:
+
+[PARSE_ERROR] Error: Unexpected token
+    ╭─[ src/App.jsx:13:5 ]
+    │
+ 13 │     </>
+    │     ┬
+    │     ╰──
+────╯
+
+  Plugin: vite:oxc
+  File: C:/Users/satap/OneDrive/Documents/MERNIntProj/frontend/src/App.jsx
+      at transformWithOxc (file:///C:/Users/satap/OneDrive/Documents/MERNIntProj/frontend/node_modules/vite/dist/node/chunks/node.js:3719:19)
+      at TransformPluginContext.transform (file:///C:/Users/satap/OneDrive/Documents/MERNIntProj/frontend/node_modules/vite/dist/node/chunks/node.js:3795:26)
+      at EnvironmentPluginContainer.transform (file:///C:/Users/satap/OneDrive/Documents/MERNIntProj/frontend/node_modules/vite/dist/node/chunks/node.js:29998:51)
+      at async loadAndTransform (file:///C:/Users/satap/OneDrive/Documents/MERNIntProj/frontend/node_modules/vite/dist/node/chunks/node.js:24133:26)
+      at async viteTransformMiddleware (file:///C:/Users/satap/OneDrive/Documents/MERNIntProj/frontend/node_modules/vite/dist/node/chunks/node.js:24941:20)
+4:38:07 pm [vite] (client) hmr update /src/App.jsx
+4:38:09 pm [vite] (client) hmr update /src/App.jsx (x2)
+4:38:15 pm [vite] (client) hmr update /src/App.jsx (x3)
+4:38:15 pm [vite] Internal server error: Transform failed with 1 error:
+
+[PARSE_ERROR] Error: Expected `>` but found `<`
+    ╭─[ src/App.jsx:12:7 ]
+    │
+ 12 │     <h</h1>
+    │       ┬
+    │       ╰── `>` expected
+────╯
+
+  Plugin: vite:oxc
+  File: C:/Users/satap/OneDrive/Documents/MERNIntProj/frontend/src/App.jsx
+      at transformWithOxc (file:///C:/Users/satap/OneDrive/Documents/MERNIntProj/frontend/node_modules/vite/dist/node/chunks/node.js:3719:19)
+      at TransformPluginContext.transform (file:///C:/Users/satap/OneDrive/Documents/MERNIntProj/frontend/node_modules/vite/dist/node/chunks/node.js:3795:26)
+      at EnvironmentPluginContainer.transform (file:///C:/Users/satap/OneDrive/Documents/MERNIntProj/frontend/node_modules/vite/dist/node/chunks/node.js:29998:51)
+      at async loadAndTransform (file:///C:/Users/satap/OneDrive/Documents/MERNIntProj/frontend/node_modules/vite/dist/node/chunks/node.js:24133:26)
+      at async viteTransformMiddleware (file:///C:/Users/satap/OneDrive/Documents/MERNIntProj/frontend/node_modules/vite/dist/node/chunks/node.js:24941:20)
+4:38:17 pm [vite] (client) hmr update /src/App.jsx
+4:38:17 pm [vite] Internal server error: Transform failed with 1 error:
+
+[PARSE_ERROR] Error: Expected `>` but found `<`
+    ╭─[ src/App.jsx:12:8 ]
+    │
+ 12 │     <hW</h1>
+    │        ┬
+    │        ╰── `>` expected
+────╯
+
+  Plugin: vite:oxc
+  File: C:/Users/satap/OneDrive/Documents/MERNIntProj/frontend/src/App.jsx
+      at transformWithOxc (file:///C:/Users/satap/OneDrive/Documents/MERNIntProj/frontend/node_modules/vite/dist/node/chunks/node.js:3719:19)
+      at TransformPluginContext.transform (file:///C:/Users/satap/OneDrive/Documents/MERNIntProj/frontend/node_modules/vite/dist/node/chunks/node.js:3795:26)
+      at EnvironmentPluginContainer.transform (file:///C:/Users/satap/OneDrive/Documents/MERNIntProj/frontend/node_modules/vite/dist/node/chunks/node.js:29998:51)
+      at async loadAndTransform (file:///C:/Users/satap/OneDrive/Documents/MERNIntProj/frontend/node_modules/vite/dist/node/chunks/node.js:24133:26)
+      at async viteTransformMiddleware (file:///C:/Users/satap/OneDrive/Documents/MERNIntProj/frontend/node_modules/vite/dist/node/chunks/node.js:24941:20)
+4:38:18 pm [vite] (client) hmr update /src/App.jsx
+4:38:18 pm [vite] Internal server error: Transform failed with 1 error:
+
+[PARSE_ERROR] Error: Expected `>` but found `<`
+    ╭─[ src/App.jsx:12:7 ]
+    │
+ 12 │     <h</h1>
+    │       ┬
+    │       ╰── `>` expected
+────╯
+
+  Plugin: vite:oxc
+  File: C:/Users/satap/OneDrive/Documents/MERNIntProj/frontend/src/App.jsx
+      at transformWithOxc (file:///C:/Users/satap/OneDrive/Documents/MERNIntProj/frontend/node_modules/vite/dist/node/chunks/node.js:3719:19)
+      at TransformPluginContext.transform (file:///C:/Users/satap/OneDrive/Documents/MERNIntProj/frontend/node_modules/vite/dist/node/chunks/node.js:3795:26)
+      at EnvironmentPluginContainer.transform (file:///C:/Users/satap/OneDrive/Documents/MERNIntProj/frontend/node_modules/vite/dist/node/chunks/node.js:29998:51)
+      at async loadAndTransform (file:///C:/Users/satap/OneDrive/Documents/MERNIntProj/frontend/node_modules/vite/dist/node/chunks/node.js:24133:26)
+      at async viteTransformMiddleware (file:///C:/Users/satap/OneDrive/Documents/MERNIntProj/frontend/node_modules/vite/dist/node/chunks/node.js:24941:20)
+4:38:21 pm [vite] (client) hmr update /src/App.jsx
+4:38:21 pm [vite] Internal server error: Transform failed with 1 error:
+
+[PARSE_ERROR] Error: Expected `>` but found `<`
+    ╭─[ src/App.jsx:12:8 ]
+    │
+ 12 │     <h1</h1>
+    │        ┬
+    │        ╰── `>` expected
+────╯
+
+  Plugin: vite:oxc
+  File: C:/Users/satap/OneDrive/Documents/MERNIntProj/frontend/src/App.jsx
+      at transformWithOxc (file:///C:/Users/satap/OneDrive/Documents/MERNIntProj/frontend/node_modules/vite/dist/node/chunks/node.js:3719:19)
+      at TransformPluginContext.transform (file:///C:/Users/satap/OneDrive/Documents/MERNIntProj/frontend/node_modules/vite/dist/node/chunks/node.js:3795:26)
+      at EnvironmentPluginContainer.transform (file:///C:/Users/satap/OneDrive/Documents/MERNIntProj/frontend/node_modules/vite/dist/node/chunks/node.js:29998:51)
+      at async loadAndTransform (file:///C:/Users/satap/OneDrive/Documents/MERNIntProj/frontend/node_modules/vite/dist/node/chunks/node.js:24133:26)
+      at async viteTransformMiddleware (file:///C:/Users/satap/OneDrive/Documents/MERNIntProj/frontend/node_modules/vite/dist/node/chunks/node.js:24941:20)
+4:38:24 pm [vite] (client) hmr update /src/App.jsx
+4:38:30 pm [vite] (client) hmr update /src/App.jsx (x2)
+4:38:33 pm [vite] (client) hmr update /src/App.jsx (x3)
+4:38:33 pm [vite] (client) hmr update /src/App.jsx (x4)
+4:38:50 pm [vite] (client) hmr update /src/App.jsx (x5)
+4:39:00 pm [vite] (client) hmr update /src/App.jsx (x6)
+4:39:04 pm [vite] (client) hmr update /src/App.jsx (x7)
+4:39:10 pm [vite] (client) hmr update /src/App.jsx (x8)
+4:39:12 pm [vite] (client) hmr update /src/App.jsx (x9)
+4:39:18 pm [vite] (client) hmr update /src/App.jsx (x10)
+4:40:20 pm [vite] (client) hmr update /src/App.css
+4:40:23 pm [vite] (client) hmr update /src/App.css (x2)
+4:41:06 pm [vite] (client) hmr update /src/index.css
+4:41:08 pm [vite] (client) hmr update /src/index.css (x2)
+4:41:27 pm [vite] (client) hmr update /src/index.css (x3)
+4:41:29 pm [vite] (client) hmr update /src/index.css (x4)
+4:41:32 pm [vite] (client) hmr update /src/index.css (x5)
+4:41:33 pm [vite] (client) hmr update /src/index.css (x6)
+8:06:31 pm [vite] (client) hmr update /src/App.css
+8:06:34 pm [vite] (client) hmr update /src/App.css (x2) */
