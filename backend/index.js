@@ -1,4 +1,5 @@
 const express = require('express');
+const path = require('path');
 const app = express();
 const bodyParser = require('body-parser');
 const cors = require('cors');
@@ -25,7 +26,7 @@ app.use(cors({
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     credentials: true
 }));
-app.use('/images', express.static('public/images'));
+app.use('/images', express.static(path.join(__dirname, 'public', 'images')));
 
 app.use(async (req, res, next) => {
     await connectDB();
