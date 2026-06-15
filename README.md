@@ -49,6 +49,6 @@ For detailed technical specifications, architecture diagrams, and deployment gui
 - ✅ **JWT Authentication**: Secure token-based access with OTP reset support.
 - ✅ **React-Vite**: High-performance frontend build pipeline.
 - ✅ **Protected Routes**: Role-based access control (Admin vs. Customer).
-- ✅ **Premium UI**: Dark-mode glassmorphism aesthetics.
+- ✅ **Modern responsive UI**: Modern responsive UI with dark-mode glassmorphism design.
 
 ---
