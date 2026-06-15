@@ -52,4 +52,3 @@ For detailed technical specifications, architecture diagrams, and deployment gui
 - ✅ **Premium UI**: Dark-mode glassmorphism aesthetics.
 
 ---
-Created with ❤️ by ShopEZ Team.
