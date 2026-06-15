@@ -1,6 +1,39 @@
-# ShopEZ: Premium MERN Stack E-Commerce Platform
+# ShopEZ: Full-Stack MERN E-Commerce Platform
 
-ShopEZ is a high-fidelity, dual-backend e-commerce application built for modern businesses. It features a stunning customer storefront with advanced filtering, and a powerful Admin Portal for real-time inventory and order management.
+ShopEZ is a full-stack MERN e-commerce platform featuring a customer storefront and an admin portal. It supports authentication, product management, inventory tracking, order management, and role-based access control.
+
+## Tech Stack
+
+### Frontend
+- React.js
+- Vite
+
+### Backend
+- Node.js
+- Express.js
+- Express Router
+
+### Database
+- MongoDB
+- Mongoose
+
+### Authentication & Security
+- JWT Authentication
+- Bcrypt.js Password Hashing
+- OTP-Based Password Reset
+
+## ✨ Features
+### Customer Portal
+- User Registration & Login
+- Product Search & Filtering
+- Shopping Cart Management
+- Order Placement
+- Responsive User Interface
+### Admin Portal
+- Product Creation & Deletion
+- Inventory Management
+- Order Management
+- User Management
 
 ## 🚀 Quick Launch
 
@@ -49,6 +82,6 @@ For detailed technical specifications, architecture diagrams, and deployment gui
 - ✅ **JWT Authentication**: Secure token-based access with OTP reset support.
 - ✅ **React-Vite**: High-performance frontend build pipeline.
 - ✅ **Protected Routes**: Role-based access control (Admin vs. Customer).
-- ✅ **Modern responsive UI**: Modern responsive UI with dark-mode glassmorphism design.
+- ✅ **Modern Responsive UI**: Responsive UI with dark-mode glassmorphism design.
 
 ---
